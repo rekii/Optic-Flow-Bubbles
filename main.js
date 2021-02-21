@@ -131,7 +131,8 @@ function initCam() {
     document.body.appendChild(camVideo);
     updateCamElement();
     if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
+//         navigator.mediaDevices.getUserMedia({ video: true })
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
 
         //navigator.mediaDevices.getUserMedia({ video: { facingMode: {exact: "environment"} } })
         .then(function (stream) {
